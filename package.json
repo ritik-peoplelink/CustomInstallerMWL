@@ -1,0 +1,50 @@
+{
+  "name": "share",
+  "version": "1.0.0",
+  "description": "This is Screen Sharing Application",
+  "main": "main.js",
+  "scripts": {
+    "buildWin" : "electron-builder --windows",
+    "buildLinx" : "electron-builder --linux",
+    "build": "electron-builder --linux --windows",
+    "dist": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ritik-peoplelink/CustomInstallerMWL.git"
+  },
+  "author":{
+    "name" : "_thirstyGuy",
+    "email" : "ritik@peoplelinkvc.com"
+  },
+  "license": "ISC",
+  "homepage": "https://github.com/ritik-peoplelink/CustomInstallerMWL/blob/main/README.md",
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-builder": "^23.6.0"
+  },
+  "build": {
+    "asar": true,
+    "appId": "Share",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "uninstallDisplayName": "Uninstall-Share",
+      "license": "license.md",
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon" : "./build/icon.ico",
+      "uninstallerIcon" : "./build/icon.ico"
+    },
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "category": "Development",
+      "executableName": "share",
+      "icon": "./build/icon.png"
+    }
+  }
+}
